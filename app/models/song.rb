@@ -17,7 +17,7 @@ class Song < ActiveRecord::Base
 
   def unique_song_for_artist
     other_song = Song.find_by(title: title)
-    if other_song && other_song.artist_name == artist_name
+    if other_song && other_song.artist_name == artist_name && other_song.release_year == release_year
       errors.add(:artist_name, "this artist already has song listed")
     end
   end
