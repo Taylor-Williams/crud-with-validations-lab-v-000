@@ -20,6 +20,5 @@ class Song < ActiveRecord::Base
     if other_song && other_song.artist_name == artist_name
       errors.add(:artist_name, "this artist already has song listed")
     end
-    
   end
 end
